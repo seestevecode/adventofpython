@@ -16,6 +16,16 @@
 
 </details>
 
+<details>
+    <summary><strong>Event 2016</strong> - 2 days - 4 stars</summary><br>
+
+|                            Day | Puzzle                | Stars |
+| -----------------------------: | :-------------------- | :---: |
+| [1](/event_2016/aoc2016d01.py) | No Time for a Taxicab | \*\*  |
+| [2](/event_2016/aoc2016d02.py) | Bathroom Security     | \*\*  |
+
+</details>
+
 ## Directory Structure
 
 - One folder per year, e.g. `event_2015/`
