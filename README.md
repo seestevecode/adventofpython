@@ -1,6 +1,6 @@
 # Advent of Python
 
-## File Structure
+## Directory Structure
 
 - One folder per year, e.g. `event_2015/`
 - One program per day, e.g. `event_2015/aoc2015d01.py`
