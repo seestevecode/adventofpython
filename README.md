@@ -5,10 +5,14 @@
 <details>
     <summary><strong>Event 2015</strong> - 6 days - 12 stars</summary>
 
-| Day | Puzzle                            | Stars |
-| --: | :-------------------------------- | :---: |
-|   1 | Not Quite Lisp                    | \*\*  |
-|   2 | I Was Told There Would Be No Math | \*\*  |
+|                            Day | Puzzle                                 | Stars |
+| -----------------------------: | :------------------------------------- | :---: |
+| [1](/event_2015/aoc2015d01.py) | Not Quite Lisp                         | \*\*  |
+| [2](/event_2015/aoc2015d02.py) | I Was Told There Would Be No Math      | \*\*  |
+| [3](/event_2015/aoc2015d03.py) | Perfectly Spherical Houses in a Vacuum | \*\*  |
+| [4](/event_2015/aoc2015d04.py) | The Ideal Stocking Stuffer             | \*\*  |
+| [5](/event_2015/aoc2015d05.py) | Doesn't He Have Intern-Elves For This? | \*\*  |
+| [6](/event_2015/aoc2015d06.py) | Probably a Fire Hazard                 | \*\*  |
 
 </details>
 
