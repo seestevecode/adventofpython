@@ -3,7 +3,7 @@
 ## Completed
 
 <details>
-    <summary>Event 2015</summary>
+    <summary><strong>Event 2015</strong> - 6 days - 12 stars</summary>
 
 | Day | Puzzle                            | Stars |
 | --: | :-------------------------------- | :---: |
