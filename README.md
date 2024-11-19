@@ -26,6 +26,15 @@
 
 </details>
 
+<details>
+    <summary><strong>Event 2017</strong> - 1 day - 2 stars</summary><br>
+
+|                            Day | Puzzle          | Stars |
+| -----------------------------: | :-------------- | :---: |
+| [1](/event_2017/aoc2016d01.py) | Inverse Captcha | \*\*  |
+
+</details>
+
 ## Directory Structure
 
 - One folder per year, e.g. `event_2015/`
