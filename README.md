@@ -31,7 +31,7 @@
 
 |                            Day | Puzzle          | Stars |
 | -----------------------------: | :-------------- | :---: |
-| [1](/event_2017/aoc2016d01.py) | Inverse Captcha | \*\*  |
+| [1](/event_2017/aoc2017d01.py) | Inverse Captcha | \*\*  |
 
 </details>
 
