@@ -29,9 +29,10 @@
 <details>
     <summary><strong>Event 2017</strong> - 1 day - 2 stars</summary><br>
 
-|                            Day | Puzzle          | Stars |
-| -----------------------------: | :-------------- | :---: |
-| [1](/event_2017/aoc2017d01.py) | Inverse Captcha | \*\*  |
+|                            Day | Puzzle              | Stars |
+| -----------------------------: | :------------------ | :---: |
+| [1](/event_2017/aoc2017d01.py) | Inverse Captcha     | \*\*  |
+| [2](/event_2017/aoc2017d02.py) | Corruption Checksum | \*\*  |
 
 </details>
 
