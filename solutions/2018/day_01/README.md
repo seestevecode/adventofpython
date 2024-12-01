@@ -22,7 +22,7 @@ Simply sum the parsed input.
     for frequency in accumulate(cycle(parse(self.input))):
 ```
 
-3. With eac iteration, if the frequency as already been seen, return it as the answer.
+3. With each iteration, if the frequency as already been seen, return it as the answer.
 
 ```python
         if frequency in seen:
