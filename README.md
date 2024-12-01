@@ -10,7 +10,7 @@ I don't expect to get very far through a given puzzle year, but will be going ba
 
 | Day | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 |
 | --: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-|   1 |      |      |      |      |      |      |      |      |      |      |
+|   1 |      |      |      |      |      |      |      |      |      | \*\* |
 
 ## File Structure
 
