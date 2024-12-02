@@ -27,3 +27,9 @@
 ```python
     raise ValueError("You didn't find the right combo")
 ```
+
+5. We then run the function for 2-element combos and 3-element combos, for parts 1 and 2 respectively.
+
+```python
+    return find_combo(self.input, 2), find_combo(self.input, 3)
+```
