@@ -37,7 +37,7 @@ The `parse` function is fairly standard and just turns the input - which is a bl
 
 ## Part 2
 
-1. For part 2, we create a separate function, `is_safe_dampened` function, but we can re-use the `is_safe` function from part 1.
+1. For part 2, we create a separate function, `is_safe_dampened`, but we can re-use the `is_safe` function from part 1.
 2. First we create a list of 'dampened' reports from the raw report, by iterating through each level and returning the report with that level missing.
 
 ```python
