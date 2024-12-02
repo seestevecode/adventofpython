@@ -49,3 +49,9 @@ The `parse` function is fairly standard and just turns the input - which is a bl
 ```python
     return is_safe(report) or any(is_safe(dampened_rprt) for dampened_rprt in dampened)
 ```
+
+4. Again, we use this function to count the number of reports that are safe if dampened.
+
+```python
+    return sum(1 for report in parse(self.input) if is_safe_dampened(report))
+```
