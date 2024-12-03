@@ -25,6 +25,6 @@ Here come the regular expressions ...
 
 ## Part 2
 
-> I tried hard to make this work with regex lookahead and/or lookbehind, but failed. As I wanted to get something out in the same day, I cheated and leaned on @xavdid's blog post solution. I will come back to it after learning more about regex, to see if my initial idea is even possible,
+> I tried hard to make this work with regex lookahead and/or lookbehind, but failed. As I wanted to get something out in the same day, I cheated and leaned on [@xavdid's blog post solution](https://advent-of-code.xavd.id/writeups/2024/day/3/). I will come back to it after learning more about regex, to see if my initial idea is even possible,
 
 _NB I promise I did Part 1 unaided before I looked at any other solutions!_
