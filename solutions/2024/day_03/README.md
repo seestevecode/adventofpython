@@ -6,7 +6,12 @@ Here come the regular expressions ...
 
 ## Part 1
 
-1. First find all the instances of "mul(xxx,yyy)" in the input. `mul\(` finds the literal string "mul(" (the `\` is an escape character as `(` is a reserved character in regex). `(\d{1,3})` finds a digit (`\d`) of length 1 to 3 and captures it due to the parentheses - note the lack of escape characters for these. `,` finds the literal comma, and then we find another number with 1 to 3 digits. Finally we search for a literal closing paren by using `\)`. The return value `hits` is a list of tuples, containing the digits (as strings) that we captured.
+1. First find all the instances of "mul(xxx,yyy)" in the input. The return value `hits` is a list of tuples, containing the digits (as strings) that we captured.
+   - `mul\(` finds the literal string "mul(" (the `\` is an escape character as `(` is a reserved character in regex).
+   - `(\d{1,3})` finds a digit (`\d`) of length 1 to 3 and captures it due to the parentheses - note the lack of escape characters for these.
+   - `,` finds the literal comma.
+   - `(\d{1,3})` finds and captures another number with 1 to 3 digits.
+   - `\)` finds the closing literal parenthesis.
 
 ```python
     hits = re.findall(r"mul\((\d{1,3}),(\d{1,3})\)", self.input)
