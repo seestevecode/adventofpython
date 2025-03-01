@@ -22,7 +22,7 @@ def rotate(char: str, offset: int) -> str:
 def decrypt_name(name: str) -> str:
     counts = {char: name.count(char) for char in name.replace("-", "")}
     sorted_counts = sorted(counts.items(), key=lambda item: (-item[1], item[0]))
-    return "".join(list(map(lambda x: x[0], sorted_counts))[:5])
+    return "".join(map(lambda x: x[0], sorted_counts))[:5]
 
 
 def decipher_room(room: str) -> tuple[str, int]:
