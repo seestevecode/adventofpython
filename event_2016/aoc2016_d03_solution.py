@@ -9,9 +9,9 @@ def parse(input: str) -> list[list[int]]:
     return [list(map(int, line.split())) for line in input.split("\n")]
 
 
-def valid(sides: list[int]) -> bool:
-    assert len(sides) == 3, "There aren't three sides"
-    a, b, c = sides
+def valid(triangle: list[int]) -> bool:
+    assert len(triangle) == 3, "There aren't three sides"
+    a, b, c = triangle
     return a + b > c and b + c > a and c + a > b
 
 
@@ -31,7 +31,6 @@ def part_2(input: str) -> int:
 
 if __name__ == "__main__":
     input: str = sys.stdin.read().strip()
-    print(part_2(input))
 
     print("Part 1:", part_1(input))  # 917
     print("Part 2:", part_2(input))  # 1649
