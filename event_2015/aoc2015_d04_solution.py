@@ -13,7 +13,7 @@ def solve(input: str, prefix: str) -> int:
         hash_result = hashlib.md5(hash_input).hexdigest()
         if hash_result.startswith(prefix):
             return num
-    return -1
+    raise ValueError("No result found")
 
 
 def part_1(input: str) -> int:
