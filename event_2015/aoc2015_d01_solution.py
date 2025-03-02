@@ -9,13 +9,16 @@ def part_1(input: str) -> int:
     return input.count("(") - input.count(")")
 
 
-def part_2(input: str) -> int:
+def part_2(input: str) -> int | None:
     floor = 0
-    for step, move in enumerate(input, start=1):
-        floor += 1 if move == "(" else -1 if move == ")" else 0
-        if floor == -1:
-            return step
-    return -1
+    return next(
+        (
+            step
+            for step, move in enumerate(input, start=1)
+            if (floor := floor + (1 if move == "(" else -1 if move == ")" else 0)) == -1
+        ),
+        None,
+    )
 
 
 if __name__ == "__main__":
