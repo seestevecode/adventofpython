@@ -22,7 +22,7 @@ def part_2(input: str) -> int:
             return frequency
         else:
             previous_freqs.add(frequency)
-    return -1
+    raise ValueError("Previous frequency not found")
 
 
 if __name__ == "__main__":

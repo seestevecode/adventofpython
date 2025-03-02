@@ -24,16 +24,11 @@ def score(game: str, part: int) -> int:
     return outcome + choice
 
 
-def part_1(input: str) -> int:
-    return sum(score(game, part=1) for game in parse(input))
-
-
-def part_2(input: str) -> int:
-    return sum(score(game, part=2) for game in parse(input))
-
-
 if __name__ == "__main__":
     input: str = sys.stdin.read().strip()
 
-    print("Part 1:", part_1(input))  # 11603
-    print("Part 2:", part_2(input))  # 12725
+    part_1 = sum(score(game, part=1) for game in parse(input))
+    part_2 = sum(score(game, part=2) for game in parse(input))
+
+    print("Part 1:", part_1)  # 11603
+    print("Part 2:", part_2)  # 12725

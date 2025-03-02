@@ -16,16 +16,11 @@ def solve(input: str, prefix: str) -> int:
     raise ValueError("No result found")
 
 
-def part_1(input: str) -> int:
-    return solve(input, "00000")
-
-
-def part_2(input: str) -> int:
-    return solve(input, "000000")
-
-
 if __name__ == "__main__":
     input: str = sys.stdin.read().strip()
 
-    print("Part 1:", part_1(input))  # 117946
-    print("Part 2:", part_2(input))  # 3938038
+    part_1 = solve(input, "00000")
+    part_2 = solve(input, "000000")
+
+    print("Part 1:", part_1)  # 117946
+    print("Part 2:", part_2)  # 3938038

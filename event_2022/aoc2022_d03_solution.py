@@ -12,13 +12,12 @@ def intersect_priority(*strings):
     return (ascii_lowercase + ascii_uppercase).index(intersect.pop()) + 1
 
 
-def split_rucksack(rucksack: str) -> tuple[str, str]:
-    assert len(rucksack) % 2 == 0, "Rucksack has odd number of items"
-    midpoint = len(rucksack) // 2
-    return rucksack[:midpoint], rucksack[midpoint:]
-
-
 def part_1(input: list[str]) -> int:
+    def split_rucksack(rucksack: str) -> tuple[str, str]:
+        assert len(rucksack) % 2 == 0, "Rucksack has odd number of items"
+        midpoint = len(rucksack) // 2
+        return rucksack[:midpoint], rucksack[midpoint:]
+
     return sum(intersect_priority(*split_rucksack(rucksack)) for rucksack in input)
 
 

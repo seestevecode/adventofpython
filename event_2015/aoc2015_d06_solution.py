@@ -19,18 +19,18 @@ ACTIONS_2 = {
 }
 
 
-def parse(instruction: str) -> tuple[str, int, int, int, int]:
-    pattern = r"(turn on|turn off|toggle) (\d+),(\d+) through (\d+),(\d+)"
-    match = re.match(pattern, instruction)
-    if match:
-        action = match.group(1)
-        x1, y1 = (int(match.group(2)), int(match.group(3)))
-        x2, y2 = (int(match.group(4)), int(match.group(5)))
-        return action, x1, y1, x2, y2
-    raise ValueError("Invalid instruction")
-
-
 def solve(input: list[str], actions: dict) -> int:
+
+    def parse(instruction: str) -> tuple[str, int, int, int, int]:
+        pattern = r"(turn on|turn off|toggle) (\d+),(\d+) through (\d+),(\d+)"
+        match = re.match(pattern, instruction)
+        if match:
+            action = match.group(1)
+            x1, y1 = (int(match.group(2)), int(match.group(3)))
+            x2, y2 = (int(match.group(4)), int(match.group(5)))
+            return action, x1, y1, x2, y2
+        raise ValueError("Invalid instruction")
+
     grid = {(x, y): 0 for x in range(1000) for y in range(1000)}
     for line in input:
         action, x1, y1, x2, y2 = parse(line)
@@ -42,16 +42,11 @@ def solve(input: list[str], actions: dict) -> int:
     return sum(grid.values())
 
 
-def part_1(input: list[str]) -> int:
-    return solve(input, ACTIONS_1)
-
-
-def part_2(input: list[str]) -> int:
-    return solve(input, ACTIONS_2)
-
-
 if __name__ == "__main__":
     input: list[str] = sys.stdin.read().strip().split("\n")
 
-    print("Part 1:", part_1(input))  # 569999
-    print("Part 2:", part_2(input))  # 17836115
+    part_1 = solve(input, ACTIONS_1)
+    part_2 = solve(input, ACTIONS_2)
+
+    print("Part 1:", part_1)  # 569999
+    print("Part 2:", part_2)  # 17836115

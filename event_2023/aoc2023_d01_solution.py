@@ -7,11 +7,11 @@ import sys
 NUMBERS = ("one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
 
 
-def replace1(string: str) -> str:
+def replace_1(string: str) -> str:
     return "".join(char for char in string if char in "123456789")
 
 
-def replace2(string: str) -> str:
+def replace_2(string: str) -> str:
     return "".join(
         [
             str(NUMBERS.index(word) + 1) if string[i:].startswith(word) else string[i]
@@ -27,16 +27,11 @@ def to_num(string: str, replace_func) -> int:
     return int(replaced[0] + replaced[-1])
 
 
-def part_1(input: list[str]):
-    return sum(to_num(line, replace1) for line in input)
-
-
-def part_2(input: list[str]):
-    return sum(to_num(line, replace2) for line in input)
-
-
 if __name__ == "__main__":
     input: list[str] = sys.stdin.read().split()
 
-    print("Part 1:", part_1(input))  # 53334
-    print("Part 2:", part_2(input))  # 52834
+    part_1 = sum(to_num(line, replace_1) for line in input)
+    part_2 = sum(to_num(line, replace_2) for line in input)
+
+    print("Part 1:", part_1)  # 53334
+    print("Part 2:", part_2)  # 52834

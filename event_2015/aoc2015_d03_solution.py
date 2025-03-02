@@ -16,16 +16,11 @@ def visited(input: str) -> set[tuple[int, int]]:
     return visited
 
 
-def part_1(input: str) -> int:
-    return len(visited(input))
-
-
-def part_2(input: str) -> int:
-    return len(visited(input[0::2]) | visited(input[1::2]))
-
-
 if __name__ == "__main__":
     input: str = sys.stdin.read().strip()
 
-    print("Part 1:", part_1(input))  # 2081
-    print("Part 2:", part_2(input))  # 2341
+    part_1 = len(visited(input))
+    part_2 = len(visited(input[0::2]) | visited(input[1::2]))
+
+    print("Part 1:", part_1)  # 2081
+    print("Part 2:", part_2)  # 2341

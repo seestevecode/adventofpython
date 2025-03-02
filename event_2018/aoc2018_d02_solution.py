@@ -6,25 +6,22 @@ import itertools
 import sys
 
 
-def count_xs(input: list[str], target: int) -> int:
-    return sum(target in {line.count(char) for char in set(line)} for line in input)
-
-
 def part_1(input: list[str]) -> int:
+    def count_xs(input: list[str], target: int) -> int:
+        return sum(target in {line.count(char) for char in set(line)} for line in input)
+
     return count_xs(input, 2) * count_xs(input, 3)
 
 
 def part_2(input: list[str]) -> str:
-    results = []
-    for line1, line2 in itertools.combinations(input, 2):
-        assert len(line1) == len(line2)
-        common = "".join(
-            [char for pos, char in enumerate(line1) if line1[pos] == line2[pos]]
-        )
-        if len(common) == len(line1) - 1:
-            results.append(common)
-    assert len(results) == 1
-    return results[0]
+    def common_chars(line1: str, line2: str) -> str:
+        return "".join(c for c1, c2, c in zip(line1, line2, line1) if c1 == c2)
+
+    return next(
+        common
+        for line1, line2 in itertools.combinations(input, 2)
+        if len(common := common_chars(line1, line2)) == len(line1) - 1
+    )
 
 
 if __name__ == "__main__":

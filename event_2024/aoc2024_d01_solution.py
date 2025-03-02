@@ -12,18 +12,13 @@ def parse(input: list[str]) -> tuple[list[int], list[int]]:
     return lists[0], lists[1]
 
 
-def part_1(input: list[str]):
-    left, right = parse(input)
-    return sum(abs(lnum - rnum) for lnum, rnum in zip(left, right))
-
-
-def part_2(input: list[str]):
-    left, right = parse(input)
-    return sum(lnum * right.count(lnum) for lnum in left)
-
-
 if __name__ == "__main__":
     input: list[str] = sys.stdin.read().strip().split("\n")
 
-    print("Part 1:", part_1(input))  # 3714264
-    print("Part 2:", part_2(input))  # 18805872
+    left, right = parse(input)
+
+    part_1 = sum(abs(lnum - rnum) for lnum, rnum in zip(left, right))
+    part_2 = sum(lnum * right.count(lnum) for lnum in left)
+
+    print("Part 1:", part_1)  # 3714264
+    print("Part 2:", part_2)  # 18805872

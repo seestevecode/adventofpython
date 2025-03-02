@@ -15,25 +15,12 @@ def parse(room: str) -> tuple[str, int, str]:
     raise ValueError("Invalid room")
 
 
-def rotate(char: str, offset: int) -> str:
-    return letters[(letters.index(char) + offset) % 26]
-
-
-def decrypt_name(name: str) -> str:
-    counts = {char: name.count(char) for char in name.replace("-", "")}
-    sorted_counts = sorted(counts.items(), key=lambda item: (-item[1], item[0]))
-    return "".join(map(lambda x: x[0], sorted_counts))[:5]
-
-
-def decipher_room(room: str) -> tuple[str, int]:
-    name, sector_id, _ = parse(room)
-    return (
-        "".join([rotate(char, sector_id) if char != "-" else " " for char in name]),
-        sector_id,
-    )
-
-
 def part_1(input: list[str]) -> int:
+    def decrypt_name(name: str) -> str:
+        counts = {char: name.count(char) for char in name.replace("-", "")}
+        sorted_counts = sorted(counts.items(), key=lambda item: (-item[1], item[0]))
+        return "".join(map(lambda x: x[0], sorted_counts))[:5]
+
     return sum(
         sector_id
         for room in input
@@ -47,13 +34,21 @@ def part_1(input: list[str]) -> int:
 
 
 def part_2(input: list[str]) -> int:
-    results = [
+    def decipher_room(room: str) -> tuple[str, int]:
+        def rotate(char: str, offset: int) -> str:
+            return letters[(letters.index(char) + offset) % 26]
+
+        name, sector_id, _ = parse(room)
+        return (
+            "".join([rotate(char, sector_id) if char != "-" else " " for char in name]),
+            sector_id,
+        )
+
+    return next(
         decipher_room(room)[1]
         for room in input
         if "object storage" in decipher_room(room)[0]
-    ]
-    assert len(results) == 1, "There is more than one result"
-    return results[0]
+    )
 
 
 if __name__ == "__main__":

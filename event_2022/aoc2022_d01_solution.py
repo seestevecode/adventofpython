@@ -10,16 +10,11 @@ def list_sums(input: list[str]) -> list[int]:
     return sorted([sum(calorie_list) for calorie_list in parsed], reverse=True)
 
 
-def part_1(input: list[str]):
-    return list_sums(input)[0]
-
-
-def part_2(input: list[str]):
-    return sum(list_sums(input)[0:3])
-
-
 if __name__ == "__main__":
     input: list[str] = sys.stdin.read().split("\n\n")
 
-    print("Part 1:", part_1(input))  # 70509
-    print("Part 2:", part_2(input))  # 208567
+    part_1 = list_sums(input)[0]
+    part_2 = sum(list_sums(input)[0:3])
+
+    print("Part 1:", part_1)  # 70509
+    print("Part 2:", part_2)  # 208567
