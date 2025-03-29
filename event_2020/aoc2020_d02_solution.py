@@ -22,8 +22,8 @@ def valid_count(input: list[str], valid_check) -> int:
 if __name__ == "__main__":
     input: list[str] = sys.stdin.read().strip().split("\n")
 
-    part_1 = valid_count(input, COUNT_IN_RANGE)
-    part_2 = valid_count(input, CHAR_IN_POSITION)
+    part_1: int = valid_count(input, COUNT_IN_RANGE)
+    part_2: int = valid_count(input, CHAR_IN_POSITION)
 
     print("Part 1:", part_1)  # 620
     print("Part 2:", part_2)  # 727

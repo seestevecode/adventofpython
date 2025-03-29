@@ -34,8 +34,8 @@ def solve(input: list[str], grid: str) -> str:
 if __name__ == "__main__":
     input: list[str] = sys.stdin.read().split()
 
-    part_1 = solve(input, GRID_1)
-    part_2 = solve(input, GRID_2)
+    part_1: str = solve(input, GRID_1)
+    part_2: str = solve(input, GRID_2)
 
     print("Part 1:", part_1)  # 52981
     print("Part 2:", part_2)  # 74CD2

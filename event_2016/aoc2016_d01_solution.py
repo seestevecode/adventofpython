@@ -7,11 +7,11 @@ import sys
 DELTAS = {0: (0, -1), 90: (1, 0), 180: (0, 1), 270: (-1, 0)}
 
 
+def manhatten(loc: tuple[int, int]) -> int:
+    return abs(loc[0]) + abs(loc[1])
+
+
 def solve(input: str) -> tuple[int, int]:
-
-    def manhatten(loc: tuple[int, int]) -> int:
-        return abs(loc[0]) + abs(loc[1])
-
     coord, facing, visited_coords = (0, 0), 0, set([(0, 0)])
     part_1, part_2 = 0, 0
     parsed = [(instr[0], int(instr[1:])) for instr in input.split(", ")]

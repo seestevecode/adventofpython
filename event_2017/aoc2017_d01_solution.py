@@ -14,8 +14,8 @@ def solve(input: str, offset: int = 1) -> int:
 if __name__ == "__main__":
     input: str = sys.stdin.read().strip()
 
-    part_1 = solve(input)
-    part_2 = solve(input, offset=len(input) // 2)
+    part_1: int = solve(input)
+    part_2: int = solve(input, offset=len(input) // 2)
 
     print("Part 1:", part_1)  # 1390
     print("Part 2:", part_2)  # 1232

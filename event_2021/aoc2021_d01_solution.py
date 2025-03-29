@@ -13,8 +13,8 @@ def solve(input: str, offset: int) -> int:
 if __name__ == "__main__":
     input: str = sys.stdin.read()
 
-    part_1 = solve(input, 1)
-    part_2 = solve(input, 3)
+    part_1: int = solve(input, 1)
+    part_2: int = solve(input, 3)
 
     print("Part 1:", part_1)  # 1759
     print("Part 2:", part_2)  # 1805

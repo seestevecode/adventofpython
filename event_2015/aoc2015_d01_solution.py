@@ -5,11 +5,7 @@
 import sys
 
 
-def part_1(input: str) -> int:
-    return input.count("(") - input.count(")")
-
-
-def part_2(input: str) -> int:
+def basement_step(input: str) -> int:
     floor = 0
     for step, move in enumerate(input, start=1):
         floor += 1 if move == "(" else -1 if move == ")" else 0
@@ -21,5 +17,8 @@ def part_2(input: str) -> int:
 if __name__ == "__main__":
     input: str = sys.stdin.read()
 
-    print("Part 1:", part_1(input))  # 280
-    print("Part 2:", part_2(input))  # 1797
+    part_1: int = input.count("(") - input.count(")")
+    part_2: int = basement_step(input)
+
+    print("Part 1:", part_1)  # 280
+    print("Part 2:", part_2)  # 1797

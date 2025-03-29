@@ -4,27 +4,18 @@
 
 import sys
 
+if __name__ == "__main__":
+    input: list[str] = sys.stdin.read().strip().split("\n")
+    parsed = [sorted(map(int, line.split())) for line in input]
 
-def parse(input: list[str]) -> list[list[int]]:
-    return [sorted(map(int, line.split())) for line in input]
-
-
-def part_1(input: list[str]) -> int:
-    return sum(max(line) - min(line) for line in parse(input))
-
-
-def part_2(input: list[str]) -> int:
-    return sum(
+    part_1: int = sum(max(line) - min(line) for line in parsed)
+    part_2: int = sum(
         num2 // num1
-        for line in parse(input)
+        for line in parsed
         for num1 in line
         for num2 in line[line.index(num1) + 1 :]
         if num2 % num1 == 0
     )
 
-
-if __name__ == "__main__":
-    input: list[str] = sys.stdin.read().strip().split("\n")
-
-    print("Part 1:", part_1(input))  # 53460
-    print("Part 2:", part_2(input))  # 282
+    print("Part 1:", part_1)  # 53460
+    print("Part 2:", part_2)  # 282

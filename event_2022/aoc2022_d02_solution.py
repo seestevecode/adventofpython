@@ -8,10 +8,6 @@ OUTCOMES = {"win": ("AY", "BZ", "CX"), "draw": ("AX", "BY", "CZ")}
 CHOICES = {"rock": ("AY", "BX", "CZ"), "paper": ("AZ", "BY", "CX")}
 
 
-def parse(input: str) -> list[str]:
-    return [line.replace(" ", "") for line in input.split("\n")]
-
-
 def score(game: str, part: int) -> int:
     assert len(game) == 2 and game[0] in "ABC" and game[1] in "XYZ", "Invalid game"
     if part == 1:
@@ -26,9 +22,10 @@ def score(game: str, part: int) -> int:
 
 if __name__ == "__main__":
     input: str = sys.stdin.read().strip()
+    parsed = [line.replace(" ", "") for line in input.split("\n")]
 
-    part_1 = sum(score(game, part=1) for game in parse(input))
-    part_2 = sum(score(game, part=2) for game in parse(input))
+    part_1: int = sum(score(game, part=1) for game in parsed)
+    part_2: int = sum(score(game, part=2) for game in parsed)
 
     print("Part 1:", part_1)  # 11603
     print("Part 2:", part_2)  # 12725

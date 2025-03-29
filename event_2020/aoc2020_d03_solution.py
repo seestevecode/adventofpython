@@ -23,8 +23,8 @@ def tree_count(input: str, step_down: int, step_right: int) -> int:
 if __name__ == "__main__":
     input: str = sys.stdin.read()
 
-    part_1 = tree_count(input, *TRAJECTORIES[0])
-    part_2 = prod(tree_count(input, *trajectory) for trajectory in TRAJECTORIES)
+    part_1: int = tree_count(input, *TRAJECTORIES[0])
+    part_2: int = prod(tree_count(input, *trajectory) for trajectory in TRAJECTORIES)
 
     print("Part 1:", part_1)  # 207
     print("Part 2:", part_2)  # 2655892800

@@ -19,8 +19,8 @@ def solve(input: str, prefix: str) -> int:
 if __name__ == "__main__":
     input: str = sys.stdin.read().strip()
 
-    part_1 = solve(input, "00000")
-    part_2 = solve(input, "000000")
+    part_1: int = solve(input, "00000")
+    part_2: int = solve(input, "000000")
 
     print("Part 1:", part_1)  # 117946
     print("Part 2:", part_2)  # 3938038

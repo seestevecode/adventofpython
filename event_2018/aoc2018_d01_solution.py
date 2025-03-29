@@ -6,17 +6,9 @@ import itertools
 import sys
 
 
-def parse(input: str) -> list[int]:
-    return [int(line) for line in input.split()]
-
-
-def part_1(input: str) -> int:
-    return sum(parse(input))
-
-
-def part_2(input: str) -> int:
+def calibrate(input: list[int]):
     frequency, previous_freqs = 0, set([0])
-    for change in itertools.cycle(parse(input)):
+    for change in itertools.cycle(input):
         frequency += change
         if frequency in previous_freqs:
             return frequency
@@ -27,6 +19,10 @@ def part_2(input: str) -> int:
 
 if __name__ == "__main__":
     input: str = sys.stdin.read()
+    parsed = [int(line) for line in input.split()]
 
-    print("Part 1:", part_1(input))  # 508
-    print("Part 2:", part_2(input))  # 549
+    part_1: int = sum(parsed)
+    part_2: int = calibrate(parsed)
+
+    print("Part 1:", part_1)  # 508
+    print("Part 2:", part_2)  # 549

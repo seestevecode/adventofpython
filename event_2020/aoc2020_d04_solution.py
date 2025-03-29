@@ -30,11 +30,11 @@ def valid_hair_colour(hair_colour: str):
     )
 
 
-def required_keys(passport: str) -> bool:
+def check_keys(passport: str) -> bool:
     return all(key in passport for key in KEY_FUNCS.keys())
 
 
-def valid_vals(passport: str) -> bool:
+def check_vals(passport: str) -> bool:
     pairs = {pair.split(":")[0]: pair.split(":")[1] for pair in passport.split()}
     return all(KEY_FUNCS[key](value) for key, value in pairs.items() if key != "cid")
 
@@ -42,8 +42,10 @@ def valid_vals(passport: str) -> bool:
 if __name__ == "__main__":
     input: list[str] = sys.stdin.read().split("\n\n")
 
-    part_1 = sum(required_keys(passport) for passport in input)
-    part_2 = sum(required_keys(passport) and valid_vals(passport) for passport in input)
+    part_1: int = sum(check_keys(passport) for passport in input)
+    part_2: int = sum(
+        check_keys(passport) and check_vals(passport) for passport in input
+    )
 
     print("Part 1:", part_1)  # 216
     print("Part 2:", part_2)  # 150

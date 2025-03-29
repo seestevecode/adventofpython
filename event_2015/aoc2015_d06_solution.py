@@ -45,8 +45,8 @@ def solve(input: list[str], actions: dict) -> int:
 if __name__ == "__main__":
     input: list[str] = sys.stdin.read().strip().split("\n")
 
-    part_1 = solve(input, ACTIONS_1)
-    part_2 = solve(input, ACTIONS_2)
+    part_1: int = solve(input, ACTIONS_1)
+    part_2: int = solve(input, ACTIONS_2)
 
     print("Part 1:", part_1)  # 569999
     print("Part 2:", part_2)  # 17836115
