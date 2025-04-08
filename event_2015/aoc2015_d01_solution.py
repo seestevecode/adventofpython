@@ -3,12 +3,13 @@
 # https://adventofcode.com/2015/day/1
 
 import sys
+from itertools import accumulate
 
 
 def basement_step(input: str) -> int:
-    floor = 0
-    for step, move in enumerate(input, start=1):
-        floor += 1 if move == "(" else -1 if move == ")" else 0
+    moves = (1 if c == "(" else -1 for c in input)
+    floors = accumulate(moves)
+    for step, floor in enumerate(floors, start=1):
         if floor == -1:
             return step
     raise ValueError("Floor -1 not reached")
