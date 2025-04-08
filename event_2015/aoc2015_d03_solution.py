@@ -3,17 +3,15 @@
 # https://adventofcode.com/2015/day/3
 
 import sys
+from itertools import accumulate
 
 MOVES = {"^": (0, -1), ">": (1, 0), "v": (0, 1), "<": (-1, 0)}
 
 
 def visited(input: str) -> set[tuple[int, int]]:
-    coord_x, coord_y, visited = 0, 0, {(0, 0)}
-    for move in input:
-        coord_x += MOVES[move][0]
-        coord_y += MOVES[move][1]
-        visited.add((coord_x, coord_y))
-    return visited
+    steps = (MOVES[move] for move in input)
+    positions = accumulate(steps, lambda x, y: (x[0] + y[0], x[1] + y[1]))
+    return {(0, 0), *positions}
 
 
 if __name__ == "__main__":
